@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"inventory\/Flows\/AddNewItem[1:10]","start":1747396193990,"end":1747396195762,"title":"inventory\/Flows\/AddNewItem[1:10] 17:19:53.990-17:19:55.762 Add new item into the inventory"},{"id":2,"group":1,"content":"inventory\/Flows\/AddNewItem[2:21]","start":1747396195787,"end":1747396195907,"title":"inventory\/Flows\/AddNewItem[2:21] 17:19:55.787-17:19:55.907 Add the existing item into the inventory"},{"id":3,"group":1,"content":"inventory\/Flows\/AddNewItemwithInvalidRequest[1:10]","start":1747396196830,"end":1747396196914,"title":"inventory\/Flows\/AddNewItemwithInvalidRequest[1:10] 17:19:56.830-17:19:56.914 Add item with missing 'id' field into the inventory"},{"id":4,"group":1,"content":"inventory\/Flows\/GetInventoryList[1:8]","start":1747396197015,"end":1747396197145,"title":"inventory\/Flows\/GetInventoryList[1:8] 17:19:57.015-17:19:57.145 fetch inventory list"},{"id":5,"group":1,"content":"inventory\/Flows\/GetItemDetailsFromInventory[1:7]","start":1747396197230,"end":1747396197324,"title":"inventory\/Flows\/GetItemDetailsFromInventory[1:7] 17:19:57.230-17:19:57.324 Get an item details"},{"id":6,"group":1,"content":"inventory\/Flows\/GetItemDetailsWithInvalidRequest[1:7]","start":1747396197426,"end":1747396197494,"title":"inventory\/Flows\/GetItemDetailsWithInvalidRequest[1:7] 17:19:57.426-17:19:57.494 Verify Missing id in query parameter"},{"id":7,"group":1,"content":"inventory\/Flows\/GetItemDetailsWithInvalidRequest[2:14]","start":1747396197501,"end":1747396197622,"title":"inventory\/Flows\/GetItemDetailsWithInvalidRequest[2:14] 17:19:57.501-17:19:57.622 Request for non existing id"},{"id":8,"group":1,"content":"inventory\/Flows\/GetItemDetailsWithInvalidRequest[3:22]","start":1747396197629,"end":1747396197669,"title":"inventory\/Flows\/GetItemDetailsWithInvalidRequest[3:22] 17:19:57.629-17:19:57.669 Request for empty id"},{"id":9,"group":1,"content":"inventory\/Flows\/VerifyRecentAddedItem[1:9]","start":1747396197782,"end":1747396197911,"title":"inventory\/Flows\/VerifyRecentAddedItem[1:9] 17:19:57.782-17:19:57.911 Verify recent id item added in the inventory"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
