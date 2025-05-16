@@ -9,12 +9,13 @@ Ensure the following are installed on your system:
 2. **Apache Maven** - Version 3.6 or above  
 3. **IDE or Terminal** - Recommended: VS Code or IntelliJ IDEA  
 4. **Docker - Installed and running**
+
 Before starting the tests, remove any existing Docker container/image of automaticbytes/demo-app and pull a fresh copy.
 This is necessary because test scenarios 3 & 4 use test data with id = 10, which may already exist in the database from a previous run, causing the tests to fail.
 
 ---
 ## Project Structure
-
+```
 karateapiproject/
 ├── src/
 │   └── test/
@@ -31,7 +32,7 @@ karateapiproject/
 │   └── karate-reports/
 │       └── karate-summary.html             # HTML test summary report
 ├── pom.xml                                 # Maven build file
-└── README.md                               # Project documentation
+└── README.md                               # Project documentation```
 
 
 ## 🚀 Getting Started
